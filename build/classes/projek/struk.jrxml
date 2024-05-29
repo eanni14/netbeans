@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="143" pageHeight="215" columnWidth="103" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cc5083c7-2931-4a5d-b41f-ec0969fdad41">
+	<property name="ireport.zoom" value="6.442040000000003"/>
+	<property name="ireport.x" value="71"/>
+	<property name="ireport.y" value="148"/>
+	<parameter name="kode" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from penjualan where faktur = $P{kode}]]>
+	</queryString>
+	<field name="no" class="java.lang.String"/>
+	<field name="faktur" class="java.lang.String"/>
+	<field name="tanggal" class="java.sql.Date"/>
+	<field name="jam" class="java.sql.Time"/>
+	<field name="makanan" class="java.lang.String"/>
+	<field name="qty" class="java.lang.Integer"/>
+	<field name="harga" class="java.lang.String"/>
+	<field name="subtotal" class="java.lang.String"/>
+	<field name="ppn" class="java.lang.String"/>
+	<field name="total" class="java.lang.String"/>
+	<field name="bayar" class="java.lang.String"/>
+	<field name="kembalian" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="18" splitType="Stretch">
+			<staticText>
+				<reportElement x="26" y="0" width="53" height="12" uuid="294b072f-a232-499d-bd77-ede0eea5af4d"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[YR JIWA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="26" y="8" width="40" height="8" uuid="db692b45-230c-4a70-bfd0-33b62e54b9d8"/>
+				<textElement>
+					<font size="5" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{faktur}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="8" width="20" height="8" uuid="36c69664-bd4c-49e3-88f2-211257c10ee0"/>
+				<textElement>
+					<font size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Faktur]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="20" height="8" uuid="83db0a28-2159-4239-a583-3adca517268a"/>
+				<textElement>
+					<font size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanggal]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="28" y="0" width="51" height="8" uuid="d933a491-464d-4f02-bd40-a4e4f2a8cfa9"/>
+				<textElement>
+					<font size="5" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tanggal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="11" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="38" height="8" uuid="63842e8e-13e3-4373-a183-c218385c27ed"/>
+				<textElement>
+					<font size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Makanan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="39" y="0" width="17" height="8" uuid="bacb69d2-efca-4948-84d8-8adfe3ca3c04"/>
+				<textElement>
+					<font size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="57" y="0" width="27" height="8" uuid="0340d755-a82a-4fc8-9a10-8f3316046f7e"/>
+				<textElement>
+					<font size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Harga]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="85" y="0" width="22" height="8" uuid="f8125c4a-b275-42b5-ba2a-21a9d1892faa"/>
+				<textElement>
+					<font size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Subtotal]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="38" height="18" uuid="ea0f9074-d7c0-4965-91b8-be457517b1ee"/>
+				<textElement>
+					<font size="5" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{makanan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="0" width="17" height="18" uuid="14e41cd5-b23f-453e-afbb-d051045956bf"/>
+				<textElement verticalAlignment="Top">
+					<font size="5" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="57" y="0" width="27" height="18" uuid="f804a04a-0a78-4f22-92b8-e3f660958044"/>
+				<textElement>
+					<font size="5" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{harga}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="85" y="0" width="22" height="18" uuid="bbcd0a77-0d55-4fed-a0b9-5f206ef02ddb"/>
+				<textElement>
+					<font size="5" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subtotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="60" splitType="Stretch">
+			<textField>
+				<reportElement x="28" y="10" width="40" height="10" uuid="3127ae86-c0b9-4c8d-a3ff-5c36d946cea0"/>
+				<textElement>
+					<font size="5" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="28" y="0" width="40" height="10" uuid="86622f7e-3481-4908-b0e7-070ee1aff92d"/>
+				<textElement>
+					<font size="5" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ppn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="22" width="39" height="10" uuid="f8cdeaa9-d043-49ac-a1b1-2f430fc90db1"/>
+				<textElement>
+					<font size="5" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bayar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="32" width="39" height="10" uuid="96677fc6-aaa5-480d-936a-561913925c53"/>
+				<textElement>
+					<font size="5" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kembalian}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="21" height="10" uuid="5a56010e-7f42-4f10-b9f4-3339a34b5838"/>
+				<textElement>
+					<font size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PPN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="10" width="21" height="10" uuid="9d9448ef-a9ee-4257-9b32-5f4e5c77b5e9"/>
+				<textElement>
+					<font size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="22" width="28" height="10" uuid="a9a438da-ca6e-4522-b527-41d6481f45d4"/>
+				<textElement>
+					<font size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bayar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="32" width="28" height="10" uuid="0f762556-dff6-492d-86be-e5a31ad8ce0e"/>
+				<textElement>
+					<font size="5" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kembalian]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="42" width="77" height="18" uuid="32352646-ad71-41b3-ac09-07b3e1d02d7c"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[-----Terimakasih-----]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
